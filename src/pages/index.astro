@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StatusPanel from '../components/StatusPanel.astro';
+import CalendarWidget from '../components/CalendarWidget.astro';
 import MastersSection from '../components/MastersSection.astro';
 ---
 
@@ -47,6 +48,9 @@ import MastersSection from '../components/MastersSection.astro';
         <p class="text-lg md:text-xl text-cyan-100/70 max-w-2xl mx-auto font-mono">
           Мультифункціональна платформа з автономним шифруванням, стрічкою тривог та протоколом миттєвої відправки SOS на 5 номерів.
         </p>
+
+        <!-- Газетний календар -->
+        <CalendarWidget />
         
         <!-- 3D Carousel Placeholder -->
         <div class="mt-12 w-full max-w-3xl h-72 mx-auto rounded-none border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-cyan-950/50">

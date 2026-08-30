@@ -1,0 +1,42 @@
+---
+// Газетний календар у стилі відривного календаря радянської доби з сучасним акцентом
+---
+
+<div class="w-full max-w-4xl mx-auto my-8 p-6 bg-[#EDE4CC] border-2 border-[#1A1008] text-[#1A1008] shadow-[8px_8px_0px_0px_rgba(139,37,0,0.8)] relative font-mono">
+  <!-- Декоративний правий нижній кутик (Foray corner) -->
+  <div class="absolute bottom-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-b-[30px] border-b-[#8B2500]"></div>
+
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <!-- Ліва частина: Дата -->
+    <div class="flex items-center space-x-6 border-b md:border-b-0 md:border-r border-[#1A1008]/20 pb-4 md:pb-0 md:pr-8 w-full md:w-auto justify-center md:justify-start">
+      <div class="text-6xl md:text-7xl font-extrabold text-[#1A3A6B] tracking-tighter">
+        30
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xs uppercase tracking-widest text-[#8B2500] font-bold">Субота</span>
+        <span class="text-xl font-bold tracking-tight">СЕРПЕНЬ</span>
+        <span class="text-xs opacity-70">2026 РІК</span>
+      </div>
+    </div>
+
+    <!-- Центр: Погода та короткий інфо-блок -->
+    <div class="flex-1 text-center md:text-left space-y-1">
+      <div class="inline-block bg-[#3D5C1E] text-white text-[10px] uppercase px-2 py-0.5 tracking-widest font-bold">
+        Режим громади: Норма
+      </div>
+      <p class="text-sm font-bold text-[#1A1008]">
+        «Є місце, де немає ворога.»
+      </p>
+      <p class="text-xs opacity-80">
+        Метео: +24°C, помірний вітер. Автономний P2P-зв'язок активний.
+      </p>
+    </div>
+
+    <!-- Права частина: Перехід на Базар -->
+    <div>
+      <a href="https://github.com/bazartoloka-sys" target="_blank" class="px-4 py-2.5 bg-[#8B2500] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#A03000] transition inline-flex items-center space-x-1.5 shadow">
+        <span>НА БАЗАР ↗</span>
+      </a>
+    </div>
+  </div>
+</div>
