@@ -1,8 +1,62 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
-<html lang='uk'>
-<head><meta charset='utf-8'/><title>Голосник</title></head>
-<body style='background:#0A1118; color:#fff; font-family:sans-serif; text-align:center; padding-top:100px;'>
-  <h1>Тримаємо зв'язок, коли все інше мовчить.</h1>
-</body>
-</html>
+
+<Layout title="Голосник — Премиальный экстремальный мессенджер">
+  <div class="relative overflow-hidden min-h-screen flex flex-col justify-between border border-cyan-500/20 bg-gradient-to-b from-[#0A1118] via-[#121C24] to-[#0A1118]">
+    
+    <!-- Header / Navbar -->
+    <header class="w-full px-6 py-4 flex items-center justify-between backdrop-blur-md bg-[#0A1118]/80 border-b border-cyan-500/20 sticky top-0 z-50">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold">
+          🐦
+        </div>
+        <span class="text-xl font-bold tracking-wider text-white">Голосник</span>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm text-cyan-200/80">
+        <a href="#" class="hover:text-cyan-400 transition">Відозв'язок</a>
+        <a href="#" class="hover:text-cyan-400 transition">IP-телефонія</a>
+        <a href="#" class="hover:text-cyan-400 transition">Інфо-підтримка</a>
+        <a href="#" class="hover:text-cyan-400 transition text-white font-semibold">Безпека та Тривоги</a>
+        <a href="#" class="hover:text-cyan-400 transition">Підтримка</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button class="px-4 py-2 text-sm text-cyan-300 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition">
+          Увійти
+        </button>
+        <button class="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-orange-600 to-red-600 rounded-lg shadow-lg shadow-red-500/30 hover:brightness-110 transition animate-pulse">
+          Екстрений Виклик
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center px-4 py-12">
+      <div class="max-w-4xl mx-auto space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+          Екстремальний захищений мессенджер
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Тримаємо зв'язок, коли все інше мовчить.
+        </h1>
+        <p class="text-lg md:text-xl text-cyan-100/70 max-w-2xl mx-auto">
+          Мультифункциональная платформа с автономным шифрованием, лентой тревог и протоколом мгновенной отправки SOS на 5 номеров.
+        </p>
+        
+        <!-- 3D Carousel Placeholder -->
+        <div class="mt-12 w-full max-w-3xl h-72 mx-auto rounded-2xl border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-cyan-950/50">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.15)_0%,transparent_70%)]"></div>
+          <p class="text-cyan-400/80 font-mono tracking-wider animate-pulse">[ 3D CAROUSEL INTERFACE MODULE ]</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer / Hotlines -->
+    <footer class="w-full py-4 border-t border-cyan-500/20 text-center text-sm text-cyan-300/60 bg-[#0A1118]/80 backdrop-blur">
+      Гаряча лінія підтримки: <span class="text-white font-mono font-bold">0 800 300 000</span>
+    </footer>
+
+  </div>
+</Layout>
