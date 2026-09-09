@@ -23,8 +23,43 @@
       <p>Захищений месенджер для українських громад: чат, дзвінки та каталог перевірених фахівців в одному місці.</p>
     </section>
 
-    <section id="wheel-placeholder" class="wheel-placeholder">
-      <p>3D-колесо вікон — у розробці</p>
+    <section class="wheel-section" aria-label="Можливості Голосника">
+      <div class="wheel-viewport">
+        <button class="wheel-nav wheel-nav--prev" aria-label="Попереднє вікно" type="button">‹</button>
+
+        <div class="wheel" id="wheel">
+          <article class="wheel-window is-active" data-index="0">
+            <h3>Про Голосник</h3>
+            <p>Захищений P2P-месенджер для українських громад — чат, дзвінки та каталог перевірених фахівців в одному місці. Без телефону, без SMS, без зайвих дозволів.</p>
+            <p class="wheel-window__tag">«Є місце де немає ворога»</p>
+          </article>
+
+          <article class="wheel-window" data-index="1">
+            <h3>Безпека та тривоги</h3>
+            <p>Статус тривог по регіону — у розробці. Живе підключення до карти та сповіщень з'явиться окремим оновленням.</p>
+          </article>
+
+          <article class="wheel-window" data-index="2">
+            <h3>Стрічка новин</h3>
+            <p>Тут з'являтимуться оновлення проєкту — що вже працює, що в розробці, що плануємо далі.</p>
+          </article>
+
+          <article class="wheel-window" data-index="3">
+            <h3>Зв'язок і мережа</h3>
+            <p>Мобільний інтернет в Україні тримається довше за оптику. Голосник розрахований на канал, який виживає останнім — голос важливіший за відео.</p>
+          </article>
+
+          <article class="wheel-window wheel-window--danger" data-index="4">
+            <h3>Екстрений виклик</h3>
+            <p>Кнопка «ДОПОМОГА» в застосунку розсилає GPS-координати п'ятьом довіреним контактам.</p>
+            <a class="wheel-window__hotline" href="tel:+380950901252">+380 95 090 12 52</a>
+          </article>
+        </div>
+
+        <button class="wheel-nav wheel-nav--next" aria-label="Наступне вікно" type="button">›</button>
+      </div>
+
+      <div class="wheel-dots" id="wheelDots"></div>
     </section>
   </main>
 
