@@ -1,0 +1,177 @@
+/* Голосник — сайт: стилі для контентних підсторінок (Підтримати проект,
+   Умови та правила, Оферта, Правила створення спільнот, Підтримка,
+   Конфіденційність, Блог та навчання).
+
+   Не чіпає style.css — довантажується окремим файлом лише на цих
+   сторінках, щоб не ризикувати живою версткою головної/колеса. */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 1.4rem auto 0;
+  max-width: 760px;
+  width: calc(100% - 2rem);
+}
+
+.back-link:hover { color: var(--cyan-soft); }
+
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem 4rem;
+}
+
+.page-eyebrow {
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.8rem;
+}
+
+.page .lead {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.page-card {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  padding: 1.9rem 1.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.page h2 {
+  color: var(--cyan-soft);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.9rem;
+}
+
+.page-card + .page-card h2,
+.page h2 { margin-top: 0; }
+
+.page h3 {
+  color: var(--text);
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 1.1rem 0 0.5rem;
+}
+
+.page p { color: var(--text-dim); margin-bottom: 0.9rem; }
+.page p:last-child { margin-bottom: 0; }
+
+.page ul, .page ol {
+  color: var(--text-dim);
+  margin: 0 0 0.9rem 1.2rem;
+}
+.page li { margin-bottom: 0.4rem; }
+.page li:last-child { margin-bottom: 0; }
+
+.page strong { color: var(--text); }
+
+.page a { text-decoration: underline; text-underline-offset: 2px; }
+
+.page-meta {
+  color: var(--text-dim);
+  opacity: 0.65;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
+
+/* Пунктирна картка-застереження — використовується на юридичних сторінках
+   (Оферта, Умови) там, де формулювання нейтральне бо рішення ще не ухвалено. */
+.note-card {
+  border: 1px dashed var(--stroke-strong);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  background: rgba(69, 200, 255, 0.05);
+}
+.note-card strong { color: var(--cyan-soft); }
+
+/* Рівні підтримки — Сусід / Козак / Гетьман */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+
+.tier-card {
+  background: var(--panel-solid);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.3rem;
+  text-align: center;
+}
+
+.tier-card .tier-emoji { font-size: 1.9rem; display: block; margin-bottom: 0.3rem; }
+.tier-card h3 { color: var(--amber); margin: 0 0 0.2rem; font-size: 1.05rem; }
+.tier-card .tier-price { color: var(--cyan); font-weight: 800; font-size: 1.35rem; margin-bottom: 0.7rem; }
+.tier-card ul { text-align: left; font-size: 0.85rem; margin-left: 1.1rem; }
+
+.tier-card--top { border-color: var(--stroke-strong); box-shadow: var(--glow-cyan); }
+
+/* Контактні картки — Підтримка */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+
+.contact-card {
+  background: var(--panel-solid);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.2rem;
+}
+.contact-card h3 { margin-top: 0; color: var(--cyan-soft); font-size: 1rem; }
+.contact-card p { margin-bottom: 0.4rem; font-size: 0.9rem; }
+
+/* Значок "скоро" — для функцій, яких ще немає в застосунку */
+.badge-soon {
+  display: inline-block;
+  background: rgba(255, 145, 82, 0.12);
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.subbar a.is-current { color: var(--cyan-soft); opacity: 1; }
+
+@media (max-width: 640px) {
+  .page { padding: 1rem 1rem 3rem; }
+  .page h1 { font-size: 1.5rem; }
+  .page-card { padding: 1.3rem 1.1rem; }
+  .back-link { padding: 0 0.5rem; }
+}
