@@ -40,41 +40,28 @@ a { color: var(--cyan); text-decoration: none; }
   inset: 0;
   z-index: -1;
   overflow: hidden;
+  background: var(--bg);
+}
+
+.atmosphere .scene {
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/hero-desktop.webp");
+  background-size: cover;
+  background-position: center 32%;
+}
+
+.atmosphere .scrim {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(ellipse 60% 45% at 6% 4%,   rgba(69, 200, 255, 0.34), transparent 60%),
-    radial-gradient(ellipse 55% 42% at 96% 10%,  rgba(255, 145, 82, 0.26), transparent 60%),
-    radial-gradient(ellipse 65% 50% at 50% 54%,  rgba(69, 200, 255, 0.16), transparent 65%),
-    radial-gradient(ellipse 55% 45% at 8% 96%,   rgba(255, 145, 82, 0.20), transparent 60%),
-    radial-gradient(ellipse 60% 45% at 94% 94%,  rgba(69, 200, 255, 0.22), transparent 60%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg) 100%);
+    radial-gradient(ellipse 65% 55% at 50% 38%, transparent 0%, rgba(7, 13, 24, 0.55) 100%),
+    linear-gradient(180deg, rgba(7, 13, 24, 0.45) 0%, rgba(7, 13, 24, 0.25) 30%, rgba(7, 13, 24, 0.55) 65%, var(--bg) 100%);
 }
 
-.atmosphere::before {
-  content: '';
-  position: absolute;
-  inset: -10%;
-  background-image:
-    linear-gradient(rgba(140, 190, 235, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(140, 190, 235, 0.09) 1px, transparent 1px);
-  background-size: 44px 44px;
+@media (max-width: 700px) {
+  .atmosphere .scene { background-image: url("../img/hero-mobile.webp"); background-position: center 22%; }
 }
-
-.atmosphere::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 900px;
-  height: 900px;
-  margin: -450px 0 0 -450px;
-  border-radius: 50%;
-  border: 1px solid rgba(140, 190, 235, 0.10);
-  box-shadow: 0 0 0 90px rgba(140, 190, 235, 0.035) inset, 0 0 0 180px rgba(140, 190, 235, 0.02) inset;
-}
-
-.atmosphere .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.55; }
-.atmosphere .orb--1 { width: 420px; height: 420px; top: -130px; left: -110px; background: var(--cyan); }
-.atmosphere .orb--2 { width: 360px; height: 360px; top: 120px; right: -150px; background: var(--amber); opacity: 0.32; }
 
 /* --- Шапка: плаваюча скляна пігулка --- */
 
