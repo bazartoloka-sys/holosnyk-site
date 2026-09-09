@@ -1,18 +1,16 @@
-// Голосник — сайт: механіка 3D-колеса вікон
+// Голосник — сайт: механіка колеса вікон (coverflow: картки завжди лицем до глядача)
 
 const WINDOW_COUNT = 5;
-const ANGLE_STEP = 360 / WINDOW_COUNT;
-const RADIUS = 420;
 
 const wheel = document.getElementById('wheel');
 const dotsWrap = document.getElementById('wheelDots');
 
 if (wheel && dotsWrap) {
-  const windows = wheel.querySelectorAll('.wheel-window');
+  const windows = Array.from(wheel.querySelectorAll('.wheel-window'));
   let currentIndex = 0;
+  let offset = 0; // px зсуву для сусідньої картки, рахується від реальної ширини картки
 
   windows.forEach((el, i) => {
-    el.style.transform = `rotateY(${i * ANGLE_STEP}deg) translateZ(${RADIUS}px)`;
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'wheel-dot';
@@ -23,10 +21,46 @@ if (wheel && dotsWrap) {
 
   const dots = dotsWrap.querySelectorAll('.wheel-dot');
 
-  function render() {
-    wheel.style.transform = `rotateY(${-currentIndex * ANGLE_STEP}deg)`;
-    windows.forEach((el, i) => el.classList.toggle('is-active', i === currentIndex));
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === currentIndex));
+  // Найкоротша "відстань" по колу з 5 елементів: -2..2
+  function deltaFor(i) {
+    let d = i - currentIndex;
+    if (d > WINDOW_COUNT / 2) d -= WINDOW_COUNT;
+    if (d < -WINDOW_COUNT / 2) d += WINDOW_COUNT;
+    return d;
+  }
+
+  function layoutFor(delta) {
+    if (delta === 0) return { x: 0, scale: 1, opacity: 1, blur: 0, z: 5 };
+    const side = delta > 0 ? 1 : -1;
+    if (Math.abs(delta) === 1) return { x: side * offset, scale: 0.72, opacity: 0.55, blur: 1, z: 3 };
+    // delta === ±2: задня картка — повністю прибрана, ніби ще за фоном
+    return { x: side * offset, scale: 0.5, opacity: 0, blur: 2, z: 1 };
+  }
+
+  function render(dragBoost = 0) {
+    windows.forEach((el, i) => {
+      const d = deltaFor(i);
+      const layout = layoutFor(d);
+      const x = layout.x + dragBoost;
+      el.style.transform = `translateX(${x}px) scale(${layout.scale})`;
+      el.style.opacity = layout.opacity;
+      el.style.filter = layout.blur ? `blur(${layout.blur}px)` : '';
+      el.style.zIndex = layout.z;
+      el.style.pointerEvents = layout.opacity === 0 ? 'none' : '';
+      el.classList.toggle('is-active', d === 0);
+    });
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === currentIndex));
+  }
+
+  function measureOffset() {
+    const cardW = windows[0] ? windows[0].offsetWidth : 320;
+    const viewport = wheel.closest('.wheel-viewport');
+    const vw = viewport ? viewport.offsetWidth : window.innerWidth;
+    const neighborHalf = (cardW * 0.72) / 2;
+    const navReserve = 44 + 40; // кнопка-стрілка + відступ від неї
+    // тягнемо сусідню картку майже до стрілки, лишаючи невеликий проміжок
+    const toEdge = vw / 2 - navReserve - neighborHalf;
+    offset = Math.max(Math.round(cardW * 0.82), Math.round(toEdge));
   }
 
   function goTo(index) {
@@ -51,21 +85,20 @@ if (wheel && dotsWrap) {
   function pointerDown(e) {
     isDragging = true;
     startX = e.touches ? e.touches[0].clientX : e.clientX;
-    wheel.style.transition = 'none';
+    wheel.classList.add('is-dragging');
   }
 
   function pointerMove(e) {
     if (!isDragging) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
     dragDelta = x - startX;
-    const dragAngle = dragDelta / 4;
-    wheel.style.transform = `rotateY(${-currentIndex * ANGLE_STEP + dragAngle}deg)`;
+    render(dragDelta);
   }
 
   function pointerUp() {
     if (!isDragging) return;
     isDragging = false;
-    wheel.style.transition = '';
+    wheel.classList.remove('is-dragging');
     if (Math.abs(dragDelta) > 40) {
       goTo(currentIndex + (dragDelta < 0 ? 1 : -1));
     } else {
@@ -81,5 +114,8 @@ if (wheel && dotsWrap) {
   window.addEventListener('mouseup', pointerUp);
   window.addEventListener('touchend', pointerUp);
 
+  window.addEventListener('resize', () => { measureOffset(); render(); });
+
+  measureOffset();
   render();
 }
