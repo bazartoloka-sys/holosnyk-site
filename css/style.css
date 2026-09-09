@@ -126,6 +126,42 @@ a { color: var(--cyan); text-decoration: none; }
   box-shadow: var(--glow-danger);
 }
 
+/* --- Другий тонкий рядок під шапкою: правова інформація та підтримка --- */
+
+.subbar {
+  position: relative;
+  z-index: 19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0.6rem auto 0;
+  width: calc(100% - 2rem);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(16, 30, 52, 0.35);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+}
+
+.subbar a {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.85;
+  white-space: nowrap;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.subbar a:hover { color: var(--cyan-soft); opacity: 1; }
+
+@media (max-width: 780px) {
+  .subbar { display: none; }
+}
+
 /* --- 3D-колесо: тепер займає весь простір під шапкою --- */
 
 .wheel-section {
