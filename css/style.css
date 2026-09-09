@@ -1,0 +1,78 @@
+:root {
+  --bg: #16100A;
+  --card: #241A12;
+  --card2: #2E2118;
+  --stroke: #3D2E22;
+  --mint: #3DD9A0;
+  --amber: #E8A33D;
+  --rust: #D2552F;
+  --blue: #2E7FA8;
+  --text: #F5EFE0;
+  --text-dim: #9A8A78;
+  --danger: #E03B3B;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+a { color: var(--mint); text-decoration: none; }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.logo { font-weight: bold; letter-spacing: 0.15em; }
+.nav { display: flex; gap: 1.25rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-danger { background: var(--danger); color: var(--text); }
+
+.hero {
+  max-width: 640px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.hero h1 { font-size: 2rem; margin-bottom: 1rem; }
+.hero p { color: var(--text-dim); }
+
+.wheel-placeholder {
+  max-width: 640px;
+  margin: 2rem auto 4rem;
+  padding: 3rem 1.5rem;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  background: var(--card);
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.site-footer {
+  border-top: 1px solid var(--stroke);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-dim);
+}
