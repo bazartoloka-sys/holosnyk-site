@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Голосник — Є місце де немає ворога</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">ГОЛОСНИК</div>
+    <a href="#" class="logo">
+      <img src="img/logo-bird.webp" alt="Голосник" class="logo__icon" width="52" height="41">
+      <span class="logo__text">Голосник</span>
+    </a>
     <nav class="nav">
       <a href="#about">Про продукт</a>
       <a href="#safety">Безпека</a>
@@ -19,8 +25,12 @@
 
   <main>
     <section class="hero">
-      <h1>Є місце де немає ворога</h1>
-      <p>Захищений месенджер для українських громад: чат, дзвінки та каталог перевірених фахівців в одному місці.</p>
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1>Є місце де немає ворога</h1>
+        <p>Захищений месенджер для українських громад: чат, дзвінки та каталог перевірених фахівців в одному місці.</p>
+      </div>
     </section>
 
     <section class="wheel-section" aria-label="Можливості Голосника">
