@@ -376,3 +376,100 @@ a { color: var(--cyan); text-decoration: none; }
   }
   .nav a { font-size: 0.76rem; }
 }
+
+/* === Модальне вікно «Завантажити» (10.09.2026) === */
+
+.nav-trigger {
+  font: inherit;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-trigger:hover { color: var(--cyan-soft); }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(4, 8, 16, 0.72);
+  backdrop-filter: blur(6px);
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.8rem 1.8rem;
+  border-radius: var(--radius);
+  background: var(--panel-solid);
+  border: 1px solid var(--stroke-strong);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.modal h2 {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--stroke);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.modal-close:hover { color: var(--cyan); border-color: var(--cyan); }
+
+.platform-list { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.platform-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--stroke);
+}
+
+.platform-item__icon {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(69, 200, 255, 0.10);
+  border: 1px solid var(--stroke);
+}
+.platform-item__icon svg { width: 18px; height: 18px; stroke: var(--text-dim); fill: none; stroke-width: 1.7; }
+
+.platform-item__body { display: flex; flex-direction: column; gap: 0.15rem; }
+.platform-item__name { color: var(--text); font-weight: 700; font-size: 0.95rem; }
+.platform-item__status { color: var(--text-dim); font-size: 0.8rem; }
+
+@media (max-width: 480px) {
+  .modal { padding: 1.6rem 1.3rem 1.4rem; }
+}

@@ -21,7 +21,7 @@
       <span class="logo__text">Голосник</span>
     </a>
     <nav class="nav">
-      <a href="#">Завантажити</a>
+      <button type="button" class="nav-trigger" id="downloadTrigger">Завантажити</button>
       <a href="#">Функції</a>
       <a href="#">Спільноти</a>
       <a href="#">Безпека</a>
@@ -78,6 +78,36 @@
 
     <div class="wheel-dots" id="wheelDots"></div>
   </main>
+
+  <div class="modal-overlay" id="downloadModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
+      <button type="button" class="modal-close" id="downloadModalClose" aria-label="Закрити">×</button>
+      <h2 id="downloadModalTitle">Встановити на</h2>
+      <div class="platform-list">
+        <div class="platform-item">
+          <div class="platform-item__icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+          <div class="platform-item__body">
+            <span class="platform-item__name">Android</span>
+            <span class="platform-item__status">Google Play — з 15.10.2026</span>
+          </div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-item__icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+          <div class="platform-item__body">
+            <span class="platform-item__name">Huawei</span>
+            <span class="platform-item__status">AppGallery — з 01.10.2026</span>
+          </div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-item__icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+          <div class="platform-item__body">
+            <span class="platform-item__name">Apple</span>
+            <span class="platform-item__status">App Store — з 01.01.2027</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

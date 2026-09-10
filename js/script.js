@@ -131,3 +131,19 @@ if (wheel && dotsWrap) {
   measureOffset();
   render();
 }
+
+// Модальне вікно «Завантажити»
+(function () {
+  const trigger = document.getElementById('downloadTrigger');
+  const modal = document.getElementById('downloadModal');
+  const closeBtn = document.getElementById('downloadModalClose');
+  if (!trigger || !modal) return;
+
+  function open() { modal.hidden = false; }
+  function close() { modal.hidden = true; }
+
+  trigger.addEventListener('click', open);
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+})();
