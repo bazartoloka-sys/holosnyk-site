@@ -37,7 +37,17 @@ if (wheel && dotsWrap) {
     return { x: side * offset, scale: 0.5, opacity: 0, blur: 2, z: 1 };
   }
 
+  // Висота активної картки — динамічно вниз до крапок-індикаторів
+  function computeActiveHeight() {
+    const wheelTop = wheel.getBoundingClientRect().top;
+    const dotsTop = dotsWrap.getBoundingClientRect().top;
+    const gapAboveDots = 24;
+    const available = dotsTop - gapAboveDots - wheelTop;
+    return Math.max(320, Math.round(available));
+  }
+
   function render(dragBoost = 0) {
+    const activeHeight = computeActiveHeight();
     windows.forEach((el, i) => {
       const d = deltaFor(i);
       const layout = layoutFor(d);
@@ -48,6 +58,8 @@ if (wheel && dotsWrap) {
       el.style.zIndex = layout.z;
       el.style.pointerEvents = layout.opacity === 0 ? 'none' : '';
       el.classList.toggle('is-active', d === 0);
+      // тільки активна картка тягнеться вниз; бокові лишаються як є (CSS-висота)
+      el.style.height = d === 0 ? `${activeHeight}px` : '';
     });
     dots.forEach((dot, i) => dot.classList.toggle('is-active', i === currentIndex));
   }
