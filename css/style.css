@@ -473,3 +473,79 @@ a { color: var(--cyan); text-decoration: none; }
 @media (max-width: 480px) {
   .modal { padding: 1.6rem 1.3rem 1.4rem; }
 }
+
+/* === Розділ «Функції» (10.09.2026) === */
+
+.features-section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.features-section__title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.feature-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-row__media {
+  flex: 0 0 auto;
+}
+
+.feature-row__media img {
+  display: block;
+  width: 220px;
+  height: auto;
+  border-radius: 28px;
+  border: 1px solid var(--stroke-strong);
+  box-shadow: var(--glow-cyan);
+}
+
+.feature-row__body {
+  flex: 1 1 auto;
+}
+
+.feature-row__body h3 {
+  color: var(--cyan-soft);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.feature-row__body p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 780px) {
+  .feature-row,
+  .feature-row:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .feature-row__media img { width: 170px; }
+  .features-section { padding: 3rem 1.25rem 3.5rem; }
+  .features-section__title { font-size: 1.5rem; margin-bottom: 2rem; }
+}
