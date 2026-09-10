@@ -549,3 +549,32 @@ a { color: var(--cyan); text-decoration: none; }
   .features-section { padding: 3rem 1.25rem 3.5rem; }
   .features-section__title { font-size: 1.5rem; margin-bottom: 2rem; }
 }
+
+/* === Функції: підзаголовки й списки в описах (10.09.2026) === */
+
+.feature-row__body h4 {
+  color: var(--amber);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 1.1rem 0 0.4rem;
+}
+
+.feature-row__body h4:first-of-type {
+  margin-top: 0.9rem;
+}
+
+.feature-row__body ul {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 0.6rem 1.2rem;
+}
+
+.feature-row__body li {
+  margin-bottom: 0.45rem;
+}
+
+.feature-row__body li:last-child {
+  margin-bottom: 0;
+}
