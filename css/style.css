@@ -578,3 +578,9 @@ a { color: var(--cyan); text-decoration: none; }
 .feature-row__body li:last-child {
   margin-bottom: 0;
 }
+
+.btn-cyan {
+  background: linear-gradient(135deg, var(--cyan-soft), var(--cyan));
+  color: var(--bg-2);
+  box-shadow: var(--glow-cyan);
+}
