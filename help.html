@@ -52,12 +52,26 @@
 
     <div class="page-card">
       <h2>Зв'язатися з нами</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Пошта підтримки</h3>
-          <p>[е-пошта підтримки — уточнити]</p>
-          <p>Відповідаємо особисто, команда невелика.</p>
-        </div>
+
+      <form id="contactForm" class="contact-form">
+        <label>
+          Ім'я
+          <input type="text" name="name" required maxlength="200">
+        </label>
+        <label>
+          Контакт (email або Telegram)
+          <input type="text" name="contact" required maxlength="200">
+        </label>
+        <label>
+          Повідомлення
+          <textarea name="message" required maxlength="4000" rows="4"></textarea>
+        </label>
+        <input type="text" name="website" class="contact-form__hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-cyan">Надіслати</button>
+        <p class="contact-form__status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-grid" style="margin-top:1.6rem;">
         <div class="contact-card">
           <h3>Термінові ситуації</h3>
           <p><a href="tel:+380950901252">+380 95 090 12 52</a></p>
@@ -69,6 +83,50 @@
         </div>
       </div>
     </div>
+
+    <script>
+    (function () {
+      var form = document.getElementById('contactForm');
+      var status = form.querySelector('.contact-form__status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var payload = {
+          name: fd.get('name'),
+          contact: fd.get('contact'),
+          message: fd.get('message'),
+          website: fd.get('website'),
+        };
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        status.textContent = 'Надсилаємо…';
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              return { ok: res.ok && data.ok };
+            });
+          })
+          .then(function (result) {
+            if (result.ok) {
+              form.reset();
+              status.textContent = 'Дякуємо, повідомлення надіслано. Відповімо особисто.';
+            } else {
+              status.textContent = 'Не вдалося надіслати. Спробуйте ще раз або напишіть у Спільноти.';
+            }
+          })
+          .catch(function () {
+            status.textContent = 'Не вдалося надіслати. Спробуйте ще раз або напишіть у Спільноти.';
+          })
+          .finally(function () {
+            btn.disabled = false;
+          });
+      });
+    })();
+    </script>
 
     <div class="page-card">
       <h2>Часті запитання</h2>
