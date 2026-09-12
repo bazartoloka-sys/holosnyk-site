@@ -366,6 +366,18 @@ a { color: var(--cyan); text-decoration: none; }
 
 .btn-danger { flex-shrink: 0; }
 
+.nav a.nav-support {
+  color: var(--bg);
+  background: var(--amber);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.nav a.nav-support:hover {
+  color: var(--bg);
+  filter: brightness(1.08);
+}
+
 @media (max-width: 780px) {
   .site-header { border-radius: 22px; }
   .nav {
