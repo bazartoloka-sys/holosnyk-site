@@ -651,3 +651,33 @@ a { color: var(--cyan); text-decoration: none; }
   border: none;
   cursor: pointer;
 }
+
+/* === Мобільне меню: один рядок, що гортається пальцем (09.10.2026) ===
+   Раніше 11 пунктів переносились рядками і сипались у стовпчик дрібних
+   слів. Тепер: логотип і «Рятуйте» зверху, меню другим рядком, який
+   гортається по горизонталі. Блок навмисно в кінці файлу — пізніше
+   правило виграє в попередніх @media (max-width: 780px). */
+@media (max-width: 780px) {
+  .site-header { flex-wrap: wrap; row-gap: 0.5rem; }
+  .logo { order: 1; }
+  .btn-danger { order: 2; }
+  .nav {
+    order: 3;
+    flex: 1 0 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a,
+  .nav-trigger {
+    flex: 0 0 auto;
+    padding: 0.45rem 0.2rem;
+    font-size: 0.82rem;
+  }
+}
