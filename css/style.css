@@ -485,6 +485,7 @@ a.platform-item--link .platform-item__status { color: var(--cyan-soft); }
 .platform-item__body { display: flex; flex-direction: column; gap: 0.15rem; }
 .platform-item__name { color: var(--text); font-weight: 700; font-size: 0.95rem; }
 .platform-item__status { color: var(--text-dim); font-size: 0.8rem; }
+.platform-item__hint { color: var(--text-dim); font-size: 0.72rem; line-height: 1.35; margin-top: 0.15rem; }
 
 @media (max-width: 480px) {
   .modal { padding: 1.6rem 1.3rem 1.4rem; }

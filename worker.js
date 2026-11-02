@@ -1,3 +1,6 @@
+const APK_PATH = "/download/holosnyk-android.apk";
+const APK_KEY = "holosnyk-android.apk";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -6,9 +9,40 @@ export default {
       return handleContact(request, env);
     }
 
+    if (url.pathname === APK_PATH && (request.method === "GET" || request.method === "HEAD")) {
+      return handleApkDownload(request, env);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
+
+function plainText(message, status) {
+  return new Response(message, {
+    status,
+    headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" },
+  });
+}
+
+async function handleApkDownload(request, env) {
+  if (!env.DOWNLOADS) {
+    return plainText("Завантаження тимчасово недоступне.", 503);
+  }
+  const head = request.method === "HEAD";
+  const obj = head ? await env.DOWNLOADS.head(APK_KEY) : await env.DOWNLOADS.get(APK_KEY);
+  if (!obj) {
+    return plainText("Файл не знайдено.", 404);
+  }
+  const headers = new Headers({
+    "content-type": "application/vnd.android.package-archive",
+    "content-disposition": 'attachment; filename="holosnyk-android.apk"',
+    "content-length": String(obj.size),
+    "cache-control": "public, max-age=300",
+    "x-content-type-options": "nosniff",
+  });
+  if (obj.httpEtag) headers.set("etag", obj.httpEtag);
+  return new Response(head ? null : obj.body, { status: 200, headers });
+}
 
 async function handleContact(request, env) {
   let data;

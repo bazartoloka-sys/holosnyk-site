@@ -2,3 +2,6 @@
 .wrangler
 worker.js
 wrangler.jsonc
+README.md
+patch_*.py
+test/

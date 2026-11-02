@@ -5,5 +5,8 @@
   "assets": {
     "directory": "./",
     "binding": "ASSETS"
-  }
+  },
+  "r2_buckets": [
+    { "binding": "DOWNLOADS", "bucket_name": "holosnyk-downloads" }
+  ]
 }
