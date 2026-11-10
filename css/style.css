@@ -686,3 +686,9 @@ a.platform-item--link .platform-item__status { color: var(--cyan-soft); }
     font-size: 0.82rem;
   }
 }
+
+/* === Функції: афіші-скріншоти з підписом на самій картинці (10.11.2026) === */
+.feature-row--poster .feature-row__media img { width: 340px; max-width: 100%; }
+@media (max-width: 640px) {
+  .feature-row--poster .feature-row__media img { width: min(100%, 340px); }
+}
