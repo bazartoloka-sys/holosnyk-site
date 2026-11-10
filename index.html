@@ -28,8 +28,9 @@
   <meta name="twitter:image" content="https://golosnik.com.ua/img/og-cover.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -85,19 +86,64 @@
    "publisher": {
     "@id": "https://golosnik.com.ua/#org"
    }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Чи потрібен номер телефону?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ні. Для реєстрації достатньо ввести ім’я. Номер телефону, SMS-код, пошта чи акаунт Google не потрібні. Рідні знаходять вас за нікнеймом або Community ID."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Скільки це коштує?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Чати, голосові та відеодзвінки між учасниками безкоштовні. Платна лише підписка «Підтримка проєкту»: вона розширює ліміти ШІ-поштівок і власних спільнот."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Хто може почути мої розмови?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Лише ви й ваш співрозмовник. Здебільшого дзвінок іде просто від телефону до телефону. Коли оператор зв’язку не дає з’єднати телефони напряму, звук проходить через наш допоміжний сервер, але зашифрованим, як запечатаний конверт через пошту: передати він може, відкрити — ні."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Чи працює, коли зникає світло?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Так, якщо є мобільний інтернет. Голосник розрахований саме на нього: голос має перевагу перед відео й тримається на слабкому зв’язку довше."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Чи є версія для iPhone?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Поки що ні. Вона очікується в App Store з 1 січня 2027 року. Зараз Голосник працює на Android, зокрема на Huawei без Google Play."
+     }
+    }
+   ]
   }
  ]
 }
   </script>
 </head>
-<body>
+<body class="page-home">
   <div class="atmosphere" aria-hidden="true">
     <div class="scene"></div>
     <div class="scrim"></div>
   </div>
 
   <header class="site-header">
-    <a href="#" class="logo">
+    <a href="/" class="logo" aria-current="page">
       <img src="img/logo-bird.webp" alt="Голосник" class="logo__icon" width="40" height="32">
       <span class="logo__text">Голосник</span>
     </a>
@@ -117,48 +163,156 @@
     <a class="btn btn-danger" href="#" onclick="alert('«Рятуйте» працює в застосунку Голосник. Якщо загроза життю — телефонуйте 112.'); return false;">Рятуйте</a>
   </header>
 
-  <main class="wheel-section" aria-label="Можливості Голосника">
-    <div class="wheel-viewport">
-      <button class="wheel-nav wheel-nav--prev" aria-label="Попереднє вікно" type="button">‹</button>
+  <main class="home">
 
-      <div class="wheel" id="wheel">
-        <article class="wheel-window is-active" data-index="0">
-          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>
-          <h3>Голосник</h3>
-          <p>Захищений P2P-месенджер для українських громад. Без телефону, без SMS, без зайвих дозволів — лише Community ID і голос, який чути навіть коли зникає світло.</p>
-          <p class="wheel-window__tag">«Є місце де немає ворога»</p>
-        </article>
-
-        <article class="wheel-window" data-index="1">
-          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>Чати</h3>
-          <p>Особисті й групові чати з наскрізним шифруванням. Голосові дзвінки й відео йдуть напряму між телефонами (P2P) і зашифровані. Голос у пріоритеті: тримається, коли слабкий зв'язок вже не тягне відео.</p>
-        </article>
-
-        <article class="wheel-window" data-index="2">
-          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Бізнес-каталог</h3>
-          <p>Довідник бізнесів і фахівців за розділами — від лікаря до майстра з ремонту. Знайти потрібного можна пошуком, а зв’язатися — чатом, дзвінком чи відео прямо в Голосніку, без номера телефону.</p>
-        </article>
-
-        <article class="wheel-window" data-index="3">
-          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M22 8.5V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.5m20 0L13.4 3.6a2.4 2.4 0 0 0-2.8 0L2 8.5m20 0L12 14 2 8.5"/></svg></div>
-          <h3>Поштівка</h3>
-          <p>Тепла звичка лишатись на зв'язку: вітання з весіллям чи днем народження, ранкове «доброго ранку», слова підтримки в тяжку хвилину.</p>
-        </article>
-
-        <article class="wheel-window" data-index="4">
-          <div class="icon-badge"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h4M7 12h10M7 16h6"/></svg></div>
-          <h3>Посвідка</h3>
-          <p>Особистий Community ID замість номера телефону, нікнейм, QR-код і швидкий доступ до кнопки «Рятуйте».</p>
-        </article>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="calendar" role="img" aria-label="Листок відривного календаря з сьогоднішньою датою">
+        <div class="pad">
+          <div class="sheet" id="sheetToday" aria-hidden="true">
+            <div class="sheet__month">Листопад</div>
+            <div class="sheet__year">2026 рік</div>
+            <div class="sheet__day">10</div>
+            <div class="sheet__weekday">Вівторок</div>
+            <dl class="sheet__sun">
+              <div><dt>Схід</dt><dd data-sun="rise">7:01</dd></div>
+              <div><dt>Захід</dt><dd data-sun="set">16:20</dd></div>
+              <div><dt>День</dt><dd data-sun="len">9:19</dd></div>
+            </dl>
+            <div class="sheet__place">Сонце над Києвом</div>
+            <div class="sheet__motto">Є місце, де немає ворога</div>
+          </div>
+          <div class="sheet sheet--gone" id="sheetGone" aria-hidden="true">
+            <div class="sheet__month">Листопад</div>
+            <div class="sheet__year">2026 рік</div>
+            <div class="sheet__day">9</div>
+            <div class="sheet__weekday">Понеділок</div>
+          </div>
+        </div>
       </div>
 
-      <button class="wheel-nav wheel-nav--next" aria-label="Наступне вікно" type="button">›</button>
-    </div>
+      <div class="hero__text">
+        <h1 id="heroTitle">Голосник
+          <small>Український месенджер для громад. Без номера телефону.</small>
+        </h1>
+        <div class="hero__lead">
+          <p>З минулого ми взяли те, що тримало людей разом: відривний календар на кухні, поштівку до свята, голос рідних у слухавці.</p>
+          <p>З майбутнього — те, що їх береже: шифрування, допомогу ШІ й зв’язок, який працює на мобільному інтернеті, коли зникає світло.</p>
+        </div>
+        <div class="hero__actions">
+          <button type="button" class="btn-install" id="downloadTrigger2">Завантажити Голосник</button>
+          <a class="link-quiet" href="features">Подивитися екрани</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="wheel-dots" id="wheelDots"></div>
+    <section class="home-section" aria-labelledby="whatTitle">
+      <h2 id="whatTitle">Що таке Голосник</h2>
+      <div class="prose">
+        <p>Голосник — український застосунок для зв’язку. У ньому можна листуватися, дзвонити й бачитися по відео з усіма, хто теж його встановив. Для реєстрації потрібне лише ім’я.</p>
+        <p>На головному екрані — листок календаря, тривоги у вашій області, погода, якість повітря й новини краю. Усе, що зазвичай шукають у п’яти різних застосунках, — в одному.</p>
+        <p class="dim">Спілкування між учасниками безкоштовне. Голосник створено в Україні, для людей будь-якого віку: шрифт великий, кнопки великі.</p>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="inTitle">
+      <h2 id="inTitle">Що в ньому є</h2>
+      <dl class="features">
+        <div>
+          <dt>Дзвінки й листування</dt>
+          <dd>Голосові та відеодзвінки й чати, зашифровані від телефону до телефону. Голос має перевагу перед відео й тримається на слабкому зв’язку. <a href="guide-contacts">Як додати контакт</a></dd>
+        </div>
+        <div>
+          <dt>Календар, тривоги й погода</dt>
+          <dd>Щодня новий листок календаря, карта тривог вашої області, точна погода й якість повітря. <a href="features">Як це виглядає</a></dd>
+        </div>
+        <div>
+          <dt>Поштівки</dt>
+          <dd>Як колись у поштовій скриньці, тільки текст і малюнок допоможе зробити ШІ. Надіслати можна одразу або запланувати на ранок дня народження. <a href="guide-postcard">Як створити поштівку</a></dd>
+        </div>
+        <div>
+          <dt>Кнопка «Рятуйте»</dt>
+          <dd>Утримайте її 5 секунд, і ваше місце отримають до п’яти людей, яких ви обрали заздалегідь. Це не заміна 112. <a href="guide-sos">Як налаштувати</a></dd>
+        </div>
+        <div>
+          <dt>Бізнес-каталог</dt>
+          <dd>Лікар, нотаріус, СТО чи перевезення — за розділами й пошуком. Зв’язуєтесь через Голосник, номери телефонів не потрібні. <a href="guide-catalog">Як шукати</a></dd>
+        </div>
+        <div>
+          <dt>Посвідка</dt>
+          <dd>Ваш нікнейм і Community ID замість номера телефону. Їх можна продиктувати по телефону або показати QR-кодом. <a href="guide-register">Як зареєструватися</a></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="home-section" aria-labelledby="startTitle">
+      <h2 id="startTitle">Як почати</h2>
+      <ol class="steps">
+        <li><strong>Встановіть застосунок</strong>З Google Play або напряму з сайту, якщо телефон без Google Play.</li>
+        <li><strong>Введіть ім’я</strong>Кілька секунд, і акаунт готовий. Без номера телефону й SMS.</li>
+        <li><strong>Додайте рідних</strong>За нікнеймом чи Community ID — і можна дзвонити.</li>
+      </ol>
+    </section>
+
+    <section class="home-section" aria-labelledby="faqTitle">
+      <h2 id="faqTitle">Питання й відповіді</h2>
+      <div class="faq">
+        <details>
+          <summary>Чи потрібен номер телефону?</summary>
+          <p>Ні. Для реєстрації достатньо ввести ім’я. Номер телефону, SMS-код, пошта чи акаунт Google не потрібні. Рідні знаходять вас за нікнеймом або Community ID.</p>
+        </details>
+        <details>
+          <summary>Скільки це коштує?</summary>
+          <p>Чати, голосові та відеодзвінки між учасниками безкоштовні. Платна лише підписка «Підтримка проєкту»: вона розширює ліміти ШІ-поштівок і власних спільнот.</p>
+        </details>
+        <details>
+          <summary>Хто може почути мої розмови?</summary>
+          <p>Лише ви й ваш співрозмовник. Здебільшого дзвінок іде просто від телефону до телефону. Коли оператор зв’язку не дає з’єднати телефони напряму, звук проходить через наш допоміжний сервер, але зашифрованим, як запечатаний конверт через пошту: передати він може, відкрити — ні.</p>
+        </details>
+        <details>
+          <summary>Чи працює, коли зникає світло?</summary>
+          <p>Так, якщо є мобільний інтернет. Голосник розрахований саме на нього: голос має перевагу перед відео й тримається на слабкому зв’язку довше.</p>
+        </details>
+        <details>
+          <summary>Чи є версія для iPhone?</summary>
+          <p>Поки що ні. Вона очікується в App Store з 1 січня 2027 року. Зараз Голосник працює на Android, зокрема на Huawei без Google Play.</p>
+        </details>
+      </div>
+      <p class="prose dim" style="margin-top:1.4rem">Більше відповідей — на сторінці <a href="help">Підтримка</a>.</p>
+    </section>
+
+    <section class="home-section" aria-labelledby="installTitle" id="install">
+      <h2 id="installTitle">Встановити</h2>
+      <div class="install">
+        <div>
+          <h3>Android</h3>
+          <p>Сторінка Голосника в Google Play.</p>
+          <a href="https://play.google.com/store/apps/details?id=ua.toloka.holosnyk" target="_blank" rel="noopener">Відкрити Google Play</a>
+        </div>
+        <div>
+          <h3>Huawei та телефони без Google Play</h3>
+          <p>Пряме завантаження APK. Android 7 і новіше, 64-бітний. Без служб Google сповіщення про дзвінки можуть не надходити.</p>
+          <a href="/download/holosnyk-android.apk" download>Завантажити APK</a>
+        </div>
+        <div>
+          <h3>iPhone</h3>
+          <p>Версія для App Store очікується з 1 січня 2027 року.</p>
+        </div>
+      </div>
+      <p class="note-112"><strong>Якщо загроза життю — телефонуйте 112.</strong> Кнопка «Рятуйте» працює в застосунку й сповіщає ваших довірених людей, а не екстрені служби.</p>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Голосник</span>
+    <nav aria-label="Правова інформація">
+      <a href="terms">Умови та правила</a>
+      <a href="offer">Оферта</a>
+      <a href="privacy">Конфіденційність</a>
+      <a href="community-rules">Правила спільнот</a>
+      <a href="help">Підтримка</a>
+    </nav>
+  </footer>
 
   <div class="modal-overlay" id="downloadModal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
@@ -193,5 +347,6 @@
   </div>
 
   <script src="js/script.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

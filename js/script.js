@@ -143,6 +143,8 @@ if (wheel && dotsWrap) {
   function close() { modal.hidden = true; }
 
   trigger.addEventListener('click', open);
+  const trigger2 = document.getElementById('downloadTrigger2');
+  if (trigger2) trigger2.addEventListener('click', open);
   if (closeBtn) closeBtn.addEventListener('click', close);
   modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
