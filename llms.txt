@@ -26,6 +26,7 @@
 - [Як створити поштівку](https://golosnik.com.ua/guide-postcard)
 - [Як відправити поштівку із затримкою](https://golosnik.com.ua/guide-postcard-timer)
 - [Як користуватися бізнес-каталогом](https://golosnik.com.ua/guide-catalog)
+- [Голосник і інші месенджери: порівняння](https://golosnik.com.ua/guide-compare-messengers)
 - [Як налаштувати кнопку «Рятуйте»](https://golosnik.com.ua/guide-sos)
 - [Як тримати зв'язок, коли зникає світло](https://golosnik.com.ua/guide-blackout)
 

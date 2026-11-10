@@ -692,3 +692,12 @@ a.platform-item--link .platform-item__status { color: var(--cyan-soft); }
 @media (max-width: 640px) {
   .feature-row--poster .feature-row__media img { width: min(100%, 340px); }
 }
+
+/* Порівняльні таблиці в гідах */
+.cmp-wrap{overflow-x:auto;margin:14px 0 18px;-webkit-overflow-scrolling:touch}
+.cmp{width:100%;min-width:560px;border-collapse:collapse;font-size:.92rem;line-height:1.45}
+.cmp th,.cmp td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--stroke)}
+.cmp thead th{color:var(--cyan-soft);font-weight:600;border-bottom:1px solid var(--stroke-strong)}
+.cmp tbody th{color:var(--text);font-weight:600;width:20%}
+.cmp td{color:var(--text-dim)}
+.cmp td:first-of-type{color:var(--text)}
