@@ -5,3 +5,4 @@ wrangler.jsonc
 README.md
 patch_*.py
 test/
+CLAUDE.md

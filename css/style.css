@@ -701,3 +701,29 @@ a.platform-item--link .platform-item__status { color: var(--cyan-soft); }
 .cmp tbody th{color:var(--text);font-weight:600;width:20%}
 .cmp td{color:var(--text-dim)}
 .cmp td:first-of-type{color:var(--text)}
+
+/* Підвал: спільний для всіх сторінок (GEO §7 — зв'язування екосистеми).
+   Ті самі правила є в home.css; тут вони потрібні тому, що home.css
+   підключений лише на головній, а підвал стоїть на кожній сторінці. */
+.site-footer {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.4rem 1.5rem 3rem;
+  border-top: 1px solid var(--stroke);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 2rem;
+  justify-content: space-between;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.site-footer__eco { flex-basis: 100%; margin: 0; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; }
+.site-footer a { color: var(--text-dim); }
+.site-footer a:hover { color: var(--text); }
+.site-footer a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
