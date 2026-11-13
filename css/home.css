@@ -76,6 +76,14 @@
   color: #06121f;
 }
 .btn-install:hover { background: var(--cyan-soft); }
+/* Те саме для посилань: «Веб-версія», «Подивитися екрани» (13.11.2026). */
+a.btn-install { display: inline-block; text-decoration: none; }
+/* Три кнопки в один ряд на комп'ютері; на вузькому екрані — стовпчиком однакової ширини. */
+.hero__actions { gap: 0.8rem; }
+.hero__actions .btn-install { padding: 0.85rem 1.2rem; text-align: center; }
+@media (max-width: 560px) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+}
 
 .link-quiet { color: var(--text-dim); font-weight: 600; border-bottom: 1px solid var(--stroke-strong); padding-bottom: 1px; }
 .link-quiet:hover { color: var(--text); }
