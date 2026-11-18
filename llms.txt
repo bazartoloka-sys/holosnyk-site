@@ -23,6 +23,7 @@
 
 ## Гіди
 - [Як зареєструватися](https://golosnik.com.ua/guide-register)
+- [Як відновити акаунт](https://golosnik.com.ua/guide-recovery)
 - [Як додати контакт і зателефонувати](https://golosnik.com.ua/guide-contacts)
 - [Як створити поштівку](https://golosnik.com.ua/guide-postcard)
 - [Як відправити поштівку із затримкою](https://golosnik.com.ua/guide-postcard-timer)
